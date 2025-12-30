@@ -1,5 +1,6 @@
 {
     "name": "shelllite-hello",
+    "publisher": "shelllite",
     "displayName": "ShellLite Hello",
     "description": "A VS Code extension written in ShellLite!",
     "version": "0.0.1",

@@ -1,20 +1,48 @@
-# ShellLite VS Code Extension
+# ShellLite for VS Code
 
-This folder contains the source code for the ShellLite VS Code extension.
+Build file systems, web apps, and system automations in plain English. **ShellLite** is a human-readable programming language designed for automation logic.
 
-## Structure
-- `package.json`: Extension manifest.
-- `extension.shl`: Extension logic written in ShellLite.
-- `extension.js`: Compiled JavaScript (generated).
+## Features
 
-## Building
-To compile the extension, run the ShellLite compiler from the root or `shell_lite` folder:
+- **Syntax Highlighting**: Full colorization for `.shl` files.
+- **Code Snippets**: Write ShellLite code faster with built-in snippets (Coming Soon).
+- **Automation Ready**: First-class support for `shell_lite` automation scripts.
 
-```powershell
-# From oka/
-python -m shell_lite.src.main compile vscode_extension/extension.shl --target js
+## Usage
+
+1. Install the extension.
+2. Open any `.shl` file.
+3. Enjoy beautiful syntax highlighting!
+
+## Example Code
+
+```shell_lite
+# Hello World in ShellLite
+say "Hello World from ShellLite!"
+
+# Simple Desktop Automation
+to create_workspace
+    make folder "Projects"
+    make file "Projects/notes.txt"
+    write "Todo list..." into "Projects/notes.txt"
+    
+create_workspace()
 ```
 
-## Running
-1. Open this folder in VS Code.
-2. Press F5 to launch the Extension Development Host.
+## Requirements
+
+- VS Code 1.80.0 or newer.
+
+## Extension Settings
+
+This extension currently has no configurable settings.
+
+## Release Notes
+
+### 0.0.1
+- Initial release of ShellLite for VS Code.
+- Added basic syntax highlighting.
+
+---
+
+**Made by Shrey Naithani**
