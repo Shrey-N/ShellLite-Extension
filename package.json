@@ -1,0 +1,49 @@
+{
+    "name": "shelllite-hello",
+    "displayName": "ShellLite Hello",
+    "description": "A VS Code extension written in ShellLite!",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [],
+    "main": "./extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "shelllite",
+                "aliases": [
+                    "ShellLite",
+                    "shl"
+                ],
+                "extensions": [
+                    ".shl"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "shelllite",
+                "scopeName": "source.shelllite",
+                "path": "./syntaxes/shelllite.tmLanguage.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "shelllite.hello",
+                "title": "ShellLite: Say Hello"
+            }
+        ]
+    },
+    "scripts": {
+        "test": "echo 'No tests yet'"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.80.0",
+        "@types/node": "18.x"
+    }
+}

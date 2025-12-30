@@ -1,0 +1,36 @@
+# ShellLite Extension Logic
+vscode = require "vscode"
+
+to hello_handler
+    # Unchain
+    win = vscode.window
+    win.showInformationMessage "Hello from ShellLite! Written purely in .shl"
+
+to activate context
+    say "ShellLite Extension Activated!"
+    
+    # 1. Register Hello Command
+    commands = vscode.commands
+    disposable = commands.registerCommand "shelllite.hello" hello_handler
+    
+    subs = context.subscriptions
+    subs.push disposable
+
+    # 2. Create Status Bar Item
+    win = vscode.window
+    # AlignLeft = 1
+    sb_item = win.createStatusBarItem 1 100
+    sb_item.text = "$(rocket) ShellLite"
+    sb_item.tooltip = "This extension is powered by ShellLite"
+    sb_item.command = "shelllite.hello"
+    
+    sb_item.show
+    
+    subs.push sb_item
+
+to deactivate
+    say "Deactivated"
+
+# Exports
+exports.activate = activate
+exports.deactivate = deactivate

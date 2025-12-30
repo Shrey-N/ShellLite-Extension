@@ -1,0 +1,45 @@
+{
+    "scopeName": "source.shelllite",
+    "patterns": [
+        {
+            "comment": "Comments",
+            "match": "#.*",
+            "name": "comment.line.number-sign.shelllite"
+        },
+        {
+            "comment": "Strings",
+            "begin": "\"",
+            "end": "\"",
+            "name": "string.quoted.double.shelllite"
+        },
+        {
+            "comment": "Numbers",
+            "match": "\\b\\d+(\\.\\d+)?\\b",
+            "name": "constant.numeric.shelllite"
+        },
+        {
+            "comment": "Keywords",
+            "match": "\\b(if|else|while|for|loop|repeat|until|forever|break|continue|return|to|use|from|as|in|of|is|struct|structure|class|extends|try|catch|function|const|var|invoke|print|say|when|otherwise|alert|input|write|append|load|save|stop|skip|exit|error|execute|make|spawn|wait|every|listen|serve|download|compress|extract|copy|paste)\\b",
+            "name": "keyword.control.shelllite"
+        },
+        {
+            "comment": "Built-in Functions/Commands",
+            "match": "\\b(vscode|fs|path|https|child_process)\\b",
+            "name": "support.class.shelllite"
+        },
+        {
+            "comment": "Function Definition",
+            "match": "\\bto\\s+([a-zA-Z_]\\w*)",
+            "captures": {
+                "1": {
+                    "name": "entity.name.function.shelllite"
+                }
+            }
+        },
+        {
+            "comment": "Variables",
+            "match": "\\b[a-zA-Z_]\\w*\\b",
+            "name": "variable.other.shelllite"
+        }
+    ]
+}
