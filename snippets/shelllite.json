@@ -1,0 +1,61 @@
+{
+	"Function Definition": {
+		"prefix": "to",
+		"body": [
+			"to ${1:function_name} ${2:arguments}",
+			"\t$0"
+		],
+		"description": "Define a new function"
+	},
+    "Say": {
+        "prefix": "say",
+        "body": [
+            "say \"${1:message}\""
+        ],
+        "description": "Print a message"
+    },
+    "Loop": {
+        "prefix": "loop",
+        "body": [
+            "loop ${1:count}",
+            "\t$0"
+        ],
+        "description": "Loop a specific number of times"
+    },
+    "If Statement": {
+        "prefix": "if",
+        "body": [
+            "if ${1:condition}",
+            "\t$0"
+        ],
+        "description": "If statement"
+    },
+    "Make File": {
+        "prefix": "make file",
+        "body": [
+            "make file \"${1:path/to/file}\""
+        ],
+        "description": "Create a new file"
+    },
+    "Make Folder": {
+        "prefix": "make folder",
+        "body": [
+            "make folder \"${1:path/to/folder}\""
+        ],
+        "description": "Create a new folder"
+    },
+    "Write Into": {
+        "prefix": "write",
+        "body": [
+            "write \"${1:content}\" into \"${2:file_path}\""
+        ],
+        "description": "Write content into a file"
+    },
+    "Require": {
+        "prefix": "require",
+        "body": [
+            "${1:variable} = require \"${2:module}\""
+        ],
+        "description": "Import a module"
+    }
+}
