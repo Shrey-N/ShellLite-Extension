@@ -5,7 +5,7 @@ Build file systems, web apps, and system automations in plain English. **ShellLi
 ## Features
 
 - **Syntax Highlighting**: Full colorization for `.shl` files.
-- **Code Snippets**: Write ShellLite code faster with built-in snippets (Coming Soon).
+- **Code Snippets**: Write ShellLite code faster with built-in snippets.
 - **Automation Ready**: First-class support for `shell_lite` automation scripts.
 
 ## Usage

@@ -19,12 +19,12 @@
         },
         {
             "comment": "Keywords",
-            "match": "\\b(if|else|while|for|loop|repeat|until|forever|break|continue|return|to|use|from|as|in|of|is|struct|structure|class|extends|try|catch|function|const|var|invoke|print|say|when|otherwise|alert|input|write|append|load|save|stop|skip|exit|error|execute|make|spawn|wait|every|listen|serve|download|compress|extract|copy|paste)\\b",
+            "match": "\\b(if|else|while|for|loop|repeat|until|forever|break|continue|return|to|use|from|as|in|of|is|struct|structure|class|extends|try|catch|function|const|var|invoke|print|say|when|otherwise|alert|input|write|append|load|save|stop|skip|exit|error|execute|make|spawn|wait|every|listen|serve|download|compress|extract|copy|paste|folder|file|into|require)\\b",
             "name": "keyword.control.shelllite"
         },
         {
             "comment": "Built-in Functions/Commands",
-            "match": "\\b(vscode|fs|path|https|child_process)\\b",
+            "match": "\\b(vscode|fs|path|https|child_process|range|int|str|float|len)\\b",
             "name": "support.class.shelllite"
         },
         {

@@ -26,6 +26,12 @@
                 "configuration": "./language-configuration.json"
             }
         ],
+        "snippets": [
+            {
+                "language": "shelllite",
+                "path": "./snippets/shelllite.json"
+            }
+        ],
         "grammars": [
             {
                 "language": "shelllite",
