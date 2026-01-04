@@ -2,9 +2,32 @@ const vscode = require('vscode');
 const cp = require('child_process');
 const path = require('path');
 function activate(context) {
-    console.log('ShellLite Lightweight Extension Activated (v0.1.1)');
+    console.log('ShellLite Lightweight Extension Activated (v0.1.2)');
     context.subscriptions.push(vscode.commands.registerCommand('shelllite.hello', () => {
         vscode.window.showInformationMessage('Hello from ShellLite!');
+    }));
+
+    context.subscriptions.push(vscode.commands.registerCommand('shelllite.runFile', (uri) => {
+        let filePath = null;
+        if (uri && uri.fsPath) {
+            filePath = uri.fsPath;
+        } else {
+            if (vscode.window.activeTextEditor) {
+                filePath = vscode.window.activeTextEditor.document.fileName;
+            }
+        }
+
+        if (!filePath) {
+            vscode.window.showErrorMessage("No ShellLite file found to run.");
+            return;
+        }
+
+        // Find or create terminal
+        let terminal = vscode.window.terminals.find(t => t.name === 'ShellLite') || vscode.window.createTerminal('ShellLite');
+        terminal.show();
+
+        // Quote path to handle spaces
+        terminal.sendText(`shl "${filePath}"`);
     }));
     const diagnosticCollection = vscode.languages.createDiagnosticCollection('shelllite');
     context.subscriptions.push(diagnosticCollection);
@@ -12,10 +35,10 @@ function activate(context) {
         if (document.languageId !== 'shelllite') return;
         const workspaceFolder = vscode.workspace.workspaceFolders ? vscode.workspace.workspaceFolders[0].uri.fsPath : null;
         if (!workspaceFolder) return;
-        var cwd = path.join(context.extensionPath, '..');
+        var cwd = path.join(context.extensionPath, '..', 'shell-lite');
         var cmd = `python`;
         var args = ['-m', 'shell_lite.cli', 'check', document.getText() ? 'stdin' : document.fileName];
-        if (document.isDirty) return; 
+        if (document.isDirty) return;
         cp.exec(`python -m shell_lite.cli check "${document.fileName}"`, { cwd: cwd }, (err, stdout, stderr) => {
             if (err) {
                 console.error('Lint Error:', stderr || err);
@@ -45,7 +68,7 @@ function activate(context) {
     vscode.languages.registerDocumentFormattingEditProvider('shelllite', {
         provideDocumentFormattingEdits(document) {
             return new Promise((resolve, reject) => {
-                var cwd = path.join(context.extensionPath, '..');
+                var cwd = path.join(context.extensionPath, '..', 'shell-lite');
                 if (document.isDirty) {
                     vscode.window.showWarningMessage('Please save file before formatting with ShellLite.');
                     resolve([]);
@@ -73,7 +96,7 @@ function activate(context) {
     vscode.languages.registerDefinitionProvider('shelllite', {
         provideDefinition(document, position, token) {
             return new Promise((resolve) => {
-                var cwd = path.join(context.extensionPath, '..');
+                var cwd = path.join(context.extensionPath, '..', 'shell-lite');
                 var cmd = `python -m shell_lite.cli resolve "${document.fileName}" ${position.line + 1} ${position.character + 1}`;
                 cp.exec(cmd, { cwd: cwd }, (err, stdout, stderr) => {
                     if (err) { resolve(null); return; }
@@ -95,7 +118,7 @@ function activate(context) {
     vscode.languages.registerHoverProvider('shelllite', {
         provideHover(document, position, token) {
             return new Promise((resolve) => {
-                var cwd = path.join(context.extensionPath, '..');
+                var cwd = path.join(context.extensionPath, '..', 'shell-lite');
                 var cmd = `python -m shell_lite.cli resolve "${document.fileName}" ${position.line + 1} ${position.character + 1}`;
                 cp.exec(cmd, { cwd: cwd }, (err, stdout, stderr) => {
                     if (err) { resolve(null); return; }
@@ -112,7 +135,7 @@ function activate(context) {
         }
     });
     var sb_item = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
-    sb_item.text = '$(rocket) ShellLite v0.1.1';
+    sb_item.text = 'ShellLite v0.1.2';
     sb_item.tooltip = 'Lightweight ShellLite Extension';
     sb_item.show();
     context.subscriptions.push(sb_item);

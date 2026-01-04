@@ -1,6 +1,14 @@
 # ShellLite for VS Code
 
+**Code like you talk.**
+
 Build file systems, web apps, and system automations in plain English. **ShellLite** is a human-readable programming language designed for automation logic.
+
+## Support Us
+
+If you enjoy using ShellLite, please consider **starring** our repository on GitHub! It helps us grow and keep building cool things.
+
+[**GitHub Repository**](https://github.com/Shrey-N/ShellLite)
 
 ## Features
 
@@ -8,11 +16,19 @@ Build file systems, web apps, and system automations in plain English. **ShellLi
 - **Code Snippets**: Write ShellLite code faster with built-in snippets (Coming Soon).
 - **Automation Ready**: First-class support for `shell_lite` automation scripts.
 
-## Usage
+## Installation
 
-1. Install the extension.
+1. Install this extension.
 2. Open any `.shl` file.
 3. Enjoy beautiful syntax highlighting!
+
+## Ecosystem
+
+Check out the rest of the ShellLite universe:
+
+- **PyPI Package**: `pip install shell-lite` ([View on PyPI](https://pypi.org/project/shell-lite/))
+- **Website & IDE**: [shelllite.tech](https://shelllite.tech)
+- **OpenVSX**: [OpenVSX Registry](https://open-vsx.org/extension/shelllite/shelllite-hello)
 
 ## Example Code
 
@@ -29,20 +45,9 @@ to create_workspace
 create_workspace()
 ```
 
-## Requirements
+## Contact
 
-- VS Code 1.80.0 or newer.
-
-## Extension Settings
-
-This extension currently has no configurable settings.
-
-## Release Notes
-
-### 0.0.1
-- Initial release of ShellLite for VS Code.
-- Added basic syntax highlighting.
+To help in the development, please contact **Shrey Naithani** at [contact@shelllite.tech](mailto:contact@shelllite.tech).
 
 ---
-
 **Made by Shrey Naithani**

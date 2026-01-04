@@ -1,0 +1,50 @@
+{
+    "Print to console": {
+        "prefix": "say",
+        "body": [
+            "say \"${1:message}\""
+        ],
+        "description": "Print a message to the console"
+    },
+    "Function Definition": {
+        "prefix": "to",
+        "body": [
+            "to ${1:function_name}",
+            "\t$0",
+            "end"
+        ],
+        "description": "Define a new function"
+    },
+    "If Statement": {
+        "prefix": "if",
+        "body": [
+            "if ${1:condition} then",
+            "\t$0",
+            "end"
+        ],
+        "description": "Conditional block"
+    },
+    "Loop": {
+        "prefix": "loop",
+        "body": [
+            "loop ${1:10} times",
+            "\t$0",
+            "end"
+        ],
+        "description": "Simple loop"
+    },
+    "Ask Input": {
+        "prefix": "ask",
+        "body": [
+            "ask \"${1:Question? }\""
+        ],
+        "description": "Get input from user"
+    },
+    "Import Module": {
+        "prefix": "use",
+        "body": [
+            "use \"${1:module_name}\""
+        ],
+        "description": "Import a module"
+    }
+}

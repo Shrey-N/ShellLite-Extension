@@ -3,7 +3,11 @@
     "publisher": "shelllite",
     "displayName": "ShellLite Hello",
     "description": "A VS Code extension written in ShellLite!",
-    "version": "0.1.1",
+    "version": "0.1.2",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Shrey-N/ShellLite"
+    },
     "engines": {
         "vscode": "^1.80.0"
     },
@@ -37,6 +41,32 @@
             {
                 "command": "shelllite.hello",
                 "title": "ShellLite: Say Hello"
+            },
+            {
+                "command": "shelllite.runFile",
+                "title": "Run ShellLite Script"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "shelllite.runFile",
+                    "when": "resourceLangId == shelllite",
+                    "group": "navigation"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "command": "shelllite.runFile",
+                    "when": "resourceExtname == .shl",
+                    "group": "navigation"
+                }
+            ]
+        },
+        "snippets": [
+            {
+                "language": "shelllite",
+                "path": "./snippets/shelllite.json"
             }
         ]
     },
