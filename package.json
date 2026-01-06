@@ -4,6 +4,7 @@
     "displayName": "ShellLite Hello",
     "description": "A VS Code extension written in ShellLite!",
     "version": "0.1.2",
+    "icon": "icon.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/Shrey-N/ShellLite"
@@ -67,6 +68,13 @@
             {
                 "language": "shelllite",
                 "path": "./snippets/shelllite.json"
+            }
+        ],
+        "iconThemes": [
+            {
+                "id": "shelllite-icons",
+                "label": "ShellLite Icons",
+                "path": "./icons.json"
             }
         ]
     },

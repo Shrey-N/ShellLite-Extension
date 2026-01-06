@@ -1,0 +1,10 @@
+{
+    "iconDefinitions": {
+        "_shl": {
+            "iconPath": "./icon.png"
+        }
+    },
+    "fileExtensions": {
+        "shl": "_shl"
+    }
+}
