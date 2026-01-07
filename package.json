@@ -3,7 +3,7 @@
     "publisher": "shelllite",
     "displayName": "ShellLite Hello",
     "description": "A VS Code extension written in ShellLite!",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "icon": "icon.png",
     "repository": {
         "type": "git",
@@ -28,7 +28,11 @@
                 "extensions": [
                     ".shl"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./language-configuration.json",
+                "icon": {
+                    "light": "./icon.png",
+                    "dark": "./icon.png"
+                }
             }
         ],
         "grammars": [
@@ -68,13 +72,6 @@
             {
                 "language": "shelllite",
                 "path": "./snippets/shelllite.json"
-            }
-        ],
-        "iconThemes": [
-            {
-                "id": "shelllite-icons",
-                "label": "ShellLite Icons",
-                "path": "./icons.json"
             }
         ]
     },
